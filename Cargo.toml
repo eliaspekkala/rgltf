@@ -1,0 +1,11 @@
+[package]
+name = "rgltf"
+version = "0.1.0"
+authors = ["Elias Pekkala"]
+edition = "2018"
+license = "MIT"
+links = "cgltf"
+
+[build-dependencies]
+bindgen = "0.54"
+cc = "1.0"
