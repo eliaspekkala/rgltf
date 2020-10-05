@@ -299,15 +299,31 @@ pub struct cgltf_transmission {
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+pub struct cgltf_ior {
+    pub ior: cgltf_float,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct cgltf_specular {
+    pub specular_texture: cgltf_texture_view,
+    pub specular_color_factor: [cgltf_float; 3usize],
+    pub specular_factor: cgltf_float,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct cgltf_material {
     pub name: *mut ::std::os::raw::c_char,
     pub has_pbr_metallic_roughness: cgltf_bool,
     pub has_pbr_specular_glossiness: cgltf_bool,
     pub has_clearcoat: cgltf_bool,
     pub has_transmission: cgltf_bool,
+    pub has_ior: cgltf_bool,
+    pub has_specular: cgltf_bool,
     pub pbr_metallic_roughness: cgltf_pbr_metallic_roughness,
     pub pbr_specular_glossiness: cgltf_pbr_specular_glossiness,
     pub clearcoat: cgltf_clearcoat,
+    pub ior: cgltf_ior,
+    pub specular: cgltf_specular,
     pub transmission: cgltf_transmission,
     pub normal_texture: cgltf_texture_view,
     pub occlusion_texture: cgltf_texture_view,
